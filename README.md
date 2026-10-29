@@ -22,7 +22,6 @@ Then open: http://localhost:10000
    - Start Command: `npm start`
 5. Deploy.
 
-## Notes
+## Why this works
 
-- This setup is for Render's Web Service because Render's Static Site flow may not accept the required build settings in your current account.
-- The app serves the built static files from the `public/` folder.
+This app serves a static `index.html` file and correctly falls back to it for client-side routes, which prevents `404 Not Found` on page refresh or direct navigation.
