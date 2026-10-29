@@ -1,10 +1,7 @@
 services:
   - type: web
     name: speakyz-site
-    runtime: static
-    buildCommand: ""
-    staticPublishPath: .
-    headers:
-      - path: /*
-        name: X-Frame-Options
-        value: SAMEORIGIN
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start

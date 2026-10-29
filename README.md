@@ -1,28 +1,28 @@
 # Speakyz-site
 
-Static landing page for Speakyz English school. This project is ready to deploy as a Render static site.
+Static landing page for Speakyz English school.
 
 ## Local preview
 
-Open `index.html` directly in a browser, or run:
-
 ```bash
-python3 -m http.server 8000
+npm install
+npm run build
+npm start
 ```
 
-Then visit: http://localhost:8000
+Then open: http://localhost:10000
 
 ## Deploy on Render
 
 1. Push this repository to GitHub.
-2. Create a new Static Site in Render.
+2. Create a new Web Service in Render.
 3. Connect the repository `AyUbIk/Speakyz-site`.
-4. Set the publish directory to `.`.
-5. Leave the build command empty.
-6. Deploy.
+4. Set:
+   - Build Command: `npm install && npm run build`
+   - Start Command: `npm start`
+5. Deploy.
 
 ## Notes
 
-- This is a static HTML/CSS/JS site.
-- No build step is required for deployment.
-- The Telegram CTA links are already configured.
+- This setup is for Render's Web Service because Render's Static Site flow may not accept the required build settings in your current account.
+- The app serves the built static files from the `public/` folder.
