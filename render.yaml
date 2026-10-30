@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: speakyz-site
-    runtime: node
-    plan: free
-    buildCommand: npm install && npm run build
-    startCommand: npm start
