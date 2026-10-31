@@ -226,7 +226,7 @@ html:not(.js) body:has(.page:target:not(#home)) #home{display:none}
   <b>Format</b><div class="chips" data-k="Format"><label><input type="radio" name="f" value="Offline in Yunus-Abad" checked><span>Offline</span></label><label><input type="radio" name="f" value="Online"><span>Online</span></label></div>
   <b>Time</b><div class="chips" data-k="Time"><label><input type="radio" name="t" value="Morning" checked><span>Morning</span></label><label><input type="radio" name="t" value="Afternoon"><span>Afternoon</span></label><label><input type="radio" name="t" value="Evening"><span>Evening</span></label></div>
   <textarea class="msg" id="msg" readonly aria-label="Your message"></textarea>
-  <div class="cta" style="justify-content:flex-start"><button class="btn g" id="cp" type="button">Copy message</button><a class="btn y" href="https://t.me/speakyz_lern_english_bot">Open Telegram</a></div>
+  <div class="cta" style="justify-content:flex-start"><button class="btn g" id="cpd" type="button">Copy message</button><a class="btn y" href="https://t.me/speakyz_lern_english_bot">Open Telegram</a></div>
   <p id="cs" role="status" style="margin:12px 0 0;color:#A1A1A6"></p></div>
 </div></section></div>
 
@@ -377,7 +377,7 @@ function tick(){if(RM)return;var pg=$('.page.on');if(!pg)return;
 var q=0;addEventListener('scroll',function(){if(!q){q=1;requestAnimationFrame(function(){q=0;tick()})}},{passive:true});
 function compose(){var a=$$('#sf .chips').map(function(g){return g.dataset.k+': '+$('input:checked',g).value});$('#msg').value='Hello Speakyz! I would like a free lesson.\n'+a.join('\n')}
 $$('#sf input').forEach(function(i){i.addEventListener('change',compose)});compose();
-$('#cp').addEventListener('click',function(){var m=$('#msg'),s=$('#cs');
+$('#cpd').addEventListener('click',function(){var m=$('#msg'),s=$('#cs');
  function ok(){s.textContent='Copied. Paste it in the Telegram chat.'}
  function no(){m.removeAttribute('readonly');m.select();s.textContent='Select the text above, copy it, and paste it in Telegram.'}
  try{navigator.clipboard.writeText(m.value).then(ok,no)}catch(e){no()}});
@@ -510,7 +510,7 @@ text();calc();ask();
 </script>
 <script>
 (function(){
-var API='/.netlify/functions/chat';
+var API='https://speakyz-api.<имя>.workers.dev';
 var $=function(s){return document.querySelector(s)};
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
 function pick(a){return a[Math.floor(Math.random()*a.length)]}
