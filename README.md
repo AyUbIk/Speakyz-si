@@ -22,3 +22,10 @@
 
 ## Локально
 `cp .dev.vars.example .dev.vars`, вставьте ключ, `npm install`, `npm run dev`.
+
+## SEO и домен
+- Worker сам отдаёт заголовок, описание, превью для соцсетей (`public/og.png`), canonical и разметку организации для адресов `/`, `/courses`, `/ielts`, `/teachers`, `/schedule`, `/shop`, `/test`, `/university`, `/contact`. Тексты: объект `PAGES` в `src/worker.js`.
+- `robots.txt` и `sitemap.xml` строятся автоматически.
+- **Когда подключите домен speakyz.uz:** в Cloudflare добавьте его в Workers, speakyz, Settings, Domains and Routes, затем в `wrangler.jsonc` впишите `"SITE_URL": "https://speakyz.uz"` и запушьте. До этого оставьте пустым, адреса возьмутся от текущего.
+- После запуска добавьте сайт в Google Search Console и Яндекс Вебмастер и отправьте `https://speakyz.uz/sitemap.xml`.
+- Языки RU, UZ и EN переключаются на странице. Для поисковиков основной язык русский.
